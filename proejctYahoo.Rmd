@@ -14,6 +14,7 @@ library(tm)
 library(SnowballC)
 library(RWeka)
 library(RTextTools)
+library(plotly)
 
 #Setting current working directory
 pwd <- "SET YOUR PROJECT DIRECTORY HERE"
@@ -280,18 +281,23 @@ for(i in 1:NROW(final_help_data_frame)){
 #Positives
 #Precision
 pp <- count_tp / (count_tp + count_fp)
+pp
 #Recall
 rp <- count_tp / (count_tp + count_fn)
-
+rp
 #F1-measure
 f1p <- (2 * pp * rp) / (pp + rp)
+f1p
 
 #Negatives
 #Precision
 pn <- count_tn / (count_tn + count_fn)
+pn
 #Recall
 rn <- count_tn / (count_tn + count_fp)
+rn
 
 #F1-measure
 f1n <- (2 * pn * rn) / (pn + rn)
+f1n
 
